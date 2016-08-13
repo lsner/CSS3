@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            height: 200px;
+            width: 200px;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+<body>
+<img id="img" onclick="troggleRotate()" src="陈奕迅.jpg">
+
+<script>
+    var angle = 0;
+    var timer = null
+    function troggleRotate() {
+        if(angle == 0){
+            var test = document.getElementById('img')
+            timer = setInterval(function() {
+                test.style.transform = 'rotate(' + angle++ + 'deg)'
+            }, 10)
+        }else {
+            console.log(angle)
+//          clearInterval(timer)
+        }
+
+
+    }
+</script>
+
+</body>
+</html>
