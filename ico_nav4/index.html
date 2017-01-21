@@ -14,11 +14,10 @@
             /*transition-duration: 1s,1s,1s,1s,1s,1s;*/
             /*opacity: 1;*/
 
-            position:relative;
             animation-name:myfirst;
-            animation-duration:5s;
+            animation-duration:2s;
             animation-timing-function:linear;
-            animation-delay:2s;
+            animation-delay:1s;
             animation-iteration-count:infinite;
             animation-direction:alternate;
             animation-play-state:running;
@@ -32,62 +31,44 @@
             /*font-size: 16px;*/
         }
 
-        div{
-            width:100px;
-            height:100px;
-            background:red;
-            position:relative;
-            animation-name:myfirst;
-            animation-duration:5s;
-            animation-timing-function:linear;
-            animation-delay:2s;
-            animation-iteration-count:infinite;
-            animation-direction:alternate;
-            animation-play-state:running;
-        }
         @keyframes myfirst
         {
-            0% {
-                background:red; left:0px; top:0px;
-                -moz-transform: rotate(20deg);
-                -webkit-transform: rotate(20deg);
-                -o-transform: rotate(20deg);
-                transform: rotate(20deg);
-            }
-            25%  {
-                background:yellow; left:200px; top:0px;
-                -moz-transform: rotate(90deg);
-                -webkit-transform: rotate(90deg);
-                -o-transform: rotate(90deg);
-                transform: rotate(90deg)
-            }
             50%  {
-                background:blue; left:200px; top:200px;
-                -moz-transform: rotate(90deg);
-                -webkit-transform: rotate(90deg);
-                -o-transform: rotate(90deg);
-                transform: rotate(90deg)
-            }
-            75%  {
-                background:green; left:0px; top:200px;
-                -moz-transform: rotate(90deg);
-                -webkit-transform: rotate(90deg);
-                -o-transform: rotate(90deg);
-                transform: rotate(90deg)
-            }
-            100% {
-                background:red; left:0px; top:0px;
-                -moz-transform: rotate(90deg);
-                -webkit-transform: rotate(90deg);
-                -o-transform: rotate(90deg);
-                transform: rotate(90deg)
+                transform: rotate(360deg);
             }
         }
+        /*-------------------------------------------------------*/
+
+        #Capa_2 path {
+            fill:#8a8a8a;
+            transform-origin: 50% 50%;
+            stroke: #fff;
+            stroke-dasharray: 4000 4000;
+            stroke-dashoffset: 4000;
+            stroke-width: 10;
+            transition: stroke-dashoffset 2s linear;
+        }
+
+        #Capa_2:hover path.con {
+            animation-name:myfirst;
+            animation-duration:1s;
+            animation-timing-function:linear;
+            animation-delay:0s;
+            animation-iteration-count:infinite;
+            animation-direction:alternate;
+            /*animation-play-state:running;*/
+        }
+        #Capa_2:hover path.bottom {
+            stroke-dashoffset: 0;
+        }
+        #Capa_2:hover path.top {
+            stroke-dashoffset: 0;
+        }
+
 
     </style>
 </head>
 <body>
-<div></div>
 
 <svg height="100" width="100" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 486.982 486.982" style="enable-background:new 0 0 486.982 486.982;" xml:space="preserve">
@@ -100,37 +81,24 @@
 		c0.2,0.2,0.4,0.4,0.6,0.6c13,13.3,14.4,21.8,13.3,24.4c-3.4,8.1-39.9,15.3-95.3-7.8c-16.2-6.8-31.4-15.2-43.7-24.3
 		c-0.4,0.5-0.9,1-1.3,1.5c-12.1,12.1-31.7,12.1-43.8,0C258.85,149.569,258.85,129.969,270.95,117.869z"/>
 </g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
 </svg>
+
+
+<svg height="100" width="100" version="1.1" id="Capa_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 489.104 489.104" style="enable-background:new 0 0 489.104 489.104;" xml:space="preserve">
+<g>
+	<g>
+		<path class="con" d="M359.952,108.102h-87.2v83.3h-54.1v-83.3h-89.5c-11.6,0-21,9.4-21,21v230.8c0,11.6,9.4,21,21,21h230.8
+			c11.6,0,21-9.4,21-21v-230.7C381.052,117.602,371.552,108.102,359.952,108.102z"/>
+		<path class="bottom" d="M242.352,448.402l-56.4-32.6c-2.9-1.7-6.6,0.4-6.6,3.8v17.8h-83.5c-22.6,0-40.9-18.3-40.9-40.9v-151.9h-29.6v151.9
+			c0,38.9,31.5,70.4,70.4,70.4h83.5v17.8c0,3.4,3.7,5.5,6.6,3.8l56.4-32.6C245.252,454.302,245.252,450.102,242.352,448.402z"/>
+		<path class="top" d="M393.352,22.302h-83.5v-17.9c0-3.4-3.7-5.5-6.6-3.8l-56.4,32.6c-2.9,1.7-2.9,5.9,0,7.6l56.4,32.6c2.9,1.7,6.6-0.4,6.6-3.8
+			v-17.9h83.5c22.6,0,40.9,18.4,40.9,40.9v152h29.5v-151.9C463.752,53.802,432.152,22.302,393.352,22.302z"/>
+	</g>
+</g>
+
+</svg>
+
 
 </body>
 </html>
