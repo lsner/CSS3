@@ -10,9 +10,94 @@
             background: yellowgreen;
             box-shadow: 0 0 10px #000;
         }
+
+        .wrap {
+            width: 70%;
+            height: 200px;
+            margin: 50px auto;
+            background-color: #fff;
+        }
+        .wrap h1 {
+            font-size: 40px;
+            text-align: center;
+            line-height: 200px;
+        }
+
+        /**
+        * box-shadow
+        * 功能：添加一个或多个阴影
+        * 语法：box-shadow: h-shadow v-shadow blur spread color inset;
+        * 参数：
+        *      h-shadow（必需）：水平阴影的位置。允许负值。
+        *      v-shadow（必需）：垂直阴影的位置。允许负值。
+        *      blur（可选）：模糊程度，值越大越模糊。
+        *      spread（可选）：阴影的尺寸。一般不推荐设置。
+        *      color（可选）：阴影的颜色。请参阅CSS颜色值。
+        *      inset（可选）：将外部阴影（outset）改为内部阴影。
+        * 浏览器兼容：
+        *      IE9+、Firefox 4、Chrome、Opera以及Safari 5.1.1支持box-shadow属性。
+        */
+        .effect {
+            position: relative;
+            /*box-shadow: h-shadow v-shadow blur color [inset];*/
+            -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            -o-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        }
+        /**
+        * :after选择器：在被选元素的内容后面插入内容
+        * :before选择器：在备选元素额内容后面插入内容
+        * 说明：需要使用content属性来指定要插入的内容
+        * 浏览器兼容：
+        *      对于IE8及更早版本的:after，必须声明<!DOCTYPE>。
+        *
+        * content属性用于定义元素之前或之后放置的生成内容。默认地，这往往是行内内容，不过该内容创建的
+        * 框类型可以用属性display控制。
+        */
+        .effect::after{
+            content: '';
+            background: #f00;
+            position: absolute;
+            top: 50%;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.8);
+            -moz-box-shadow: 0 0 20px rgba(0,0,0,0.8);
+            -o-box-shadow: 0 0 20px rgba(0,0,0,0.8);
+            box-shadow: 0 0 20px rgba(0,0,0,0.8);
+
+            border-radius: 100px/10px; /*水平半径/垂直半径*/
+            z-index: -1;
+        }
+        .effect::before {
+            content: '';
+            background: #f00;
+            position: absolute;
+            top:0;
+            bottom: 50%;
+            left: 20px;
+            right: 20px;
+            -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.8);
+            -moz-box-shadow: 0 0 20px rgba(0,0,0,0.8);
+            -o-box-shadow: 0 0 20px rgba(0,0,0,0.8);
+            box-shadow: 0 0 20px rgba(0,0,0,0.8);
+
+            border-radius: 100px/10px; /*水平半径/垂直半径*/
+            z-index: -1;
+        }
+
+
+
+
     </style>
 </head>
 <body>
 <div></div>
+
+<div class="wrap effect">
+    <h1>Shadow Effect</h1>
+</div>
 </body>
 </html>
