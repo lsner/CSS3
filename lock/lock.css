@@ -1,0 +1,19 @@
+.wrap {
+    margin: 10% auto;
+}
+
+.row {
+
+}
+
+.circle {
+    height: 10px;
+    width: 10px;
+    margin: 15px;
+    border-radius: 100%;
+    display: inline-block;
+    background-color: black;
+}
+.circle:hover{
+    transition: 20px 1s ;
+}
