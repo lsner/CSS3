@@ -1,0 +1,18 @@
+.histogram-chart {
+    height: 200px;
+    width: 200px;
+    border-left:1px solid black;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+}
+
+.histogram-chart-item {
+    background-color: #ff960d;
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0 10px;
+    vertical-align: bottom;
+    transition: height ease 0.2s;
+}
+
+

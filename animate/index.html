@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="../jquery-2.2.3.min.js"></script>
+
+    <script>
+
+        function strToJson(str) {
+            var json = eval('(' + str + ')');
+            return json;
+        }
+        function elementConstructor(jsonData,parentNode,index) {
+            //+ 'px;'+'height:'+ parentNode.offsetHeight / 10 * jsonData[index].count
+            const element = '<div class="histogram-chart-item" ' +
+                'style=width:' + ((200/jsonData.length).toFixed(0) -25)/200*100+ '%;'+'height:'+ parentNode.offsetHeight / 10 * jsonData[index].count +'px>' +
+                jsonData[index].name+'</div>'
+
+            return element
+        }
+        function calculateJsonDataToChart(event) {
+            var jsonData = strToJson(event.target.value)
+            var histogramChart = document.getElementsByClassName('histogram-chart')[0]
+
+            if (jsonData) {
+                for (var i = 0; i < jsonData.length; i++) {
+                    $(".histogram-chart").append(elementConstructor(jsonData,histogramChart,i))
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+输入json数据<textarea onblur={calculateJsonDataToChart(event)}></textarea>
+
+<div class="histogram-chart" id="histogram-chart">
+</div>
+</body>
+</html>

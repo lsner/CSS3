@@ -3,8 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .warp{
+            height: 400px;
+            width: 400px;
+            border: 1px solid #d7e9f4;
+            margin: 10% auto;
+        }
+        .circle{
+            position: absolute;
+            height: 10px;
+            width: 10px;
+            border-radius: 100%;
+            border: 1px solid #d7e9f4;
+            background-color: #1accff;
+
+        }
+        .animate-circle:before{
+            /*content:' ';*/
+            /*position: absolute;*/
+            /*z-index:2;*/
+            /*left:0;*/
+            /*top:0;*/
+            /*width:10px;*/
+            /*height:10px;*/
+            /*background-color: #1accff;*/
+            /*border-radius: 50%;*/
+        }
+
+        .animate-circle:after {
+            content:' ';
+            position: absolute;
+            z-index:1;
+            width:10px;
+            height:10px;
+            background-color: #1accff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0,0,0,.3) inset;
+            -webkit-animation-name:'animate-circle';/*动画属性名，也就是我们前面keyframes定义的动画名*/
+            -webkit-animation-duration: 0.5s;/*动画持续时间*/
+            -webkit-animation-timing-function: ease; /*动画频率，和transition-timing-function是一样的*/
+            -webkit-animation-delay: 0s;/*动画延迟时间*/
+            -webkit-animation-iteration-count: 1;/*定义循环资料，infinite为无限次*/
+        }
+
+        @keyframes animate-circle {
+            0% {
+                left:5px;
+                top:5px;
+                opcity:75;
+                width:0;
+                height:0;
+            }
+            100% {
+                left:-20px;
+                top:-20px;
+                opacity: 0;
+                width:50px;
+                height:50px;
+            }
+        }
+    </style>
+    <script>
+        function setWaterStyle() {
+            var circle = document.getElementsByClassName('circle')[0]
+            circle.setAttribute("class","circle animate-circle")
+
+            setTimeout(function () {
+                circle.setAttribute("class","circle")
+            },500)
+        }
+
+        function setCircleMove(event) {
+            var circle = document.getElementsByClassName('circle')[0]
+
+            var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            circle.style.left = event.clientX + scrollLeft  + 'px'
+            circle.style.top = event.clientY + scrollTop + 'px'
+        }
+    </script>
 </head>
 <body>
 
+<div class="warp" onclick={setWaterStyle()} onmousemove={setCircleMove(event)}>
+    <div class="circle"></div>
+</div>
 </body>
 </html>
